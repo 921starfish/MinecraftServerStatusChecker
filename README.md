@@ -1,0 +1,2 @@
+# MinecraftServerStatusChecker
+Minecraftサーバのログイン状況等を確認するアプリ(iOS/Android)
