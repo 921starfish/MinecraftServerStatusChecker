@@ -25,6 +25,11 @@ namespace MSSC
             Url = url;
         }
 
+        public MinecraftClient()
+        {
+            Url = "40.76.27.52";
+        }
+
         public bool Connect()
         {
             var task = client.ConnectAsync(Url, 25565);
@@ -48,8 +53,12 @@ namespace MSSC
             var buffer = new byte[4096];
             _stream.Read(buffer, 0, buffer.Length);
             var jsonLength = ReadVarInt(buffer);
-            var json = ReadString(buffer, jsonLength);
-            return JsonConvert.DeserializeObject<PingPayload>(json);
+            var res = ReadString(buffer, jsonLength);
+            while (res[0] != '{')
+            {
+               res = res.Remove(0,1);
+            }
+            return JsonConvert.DeserializeObject<PingPayload>(res);
         }
 
         internal byte ReadByte(byte[] buffer)
