@@ -27,7 +27,7 @@ namespace MSSC
 
         public MinecraftClient()
         {
-            Url = "40.76.27.52";
+            Url = "localhost";
         }
 
         public bool Connect()
@@ -50,7 +50,7 @@ namespace MSSC
             WriteVarInt(1);
             Flush(0);
             Flush(0);
-            var buffer = new byte[4096];
+            var buffer = new byte[4096*2];
             _stream.Read(buffer, 0, buffer.Length);
             var jsonLength = ReadVarInt(buffer);
             var res = ReadString(buffer, jsonLength);
