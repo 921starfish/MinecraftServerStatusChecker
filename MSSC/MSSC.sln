@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MSSC", "MSSC\MSSC.shproj", "{E20622D7-4A37-4984-AE08-938B2E058CD4}"
 EndProject
@@ -19,6 +19,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C4756520-7AC4-4AE5-A56A-6CF55134E8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4756520-7AC4-4AE5-A56A-6CF55134E8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4756520-7AC4-4AE5-A56A-6CF55134E8CF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{C4756520-7AC4-4AE5-A56A-6CF55134E8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4756520-7AC4-4AE5-A56A-6CF55134E8CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

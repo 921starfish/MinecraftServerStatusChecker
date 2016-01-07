@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 
 namespace MSSC
@@ -15,7 +14,7 @@ namespace MSSC
 					Children = {
 						new Label {
 							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
+							Text = "こんにちは"
 						}
 					}
 				}
