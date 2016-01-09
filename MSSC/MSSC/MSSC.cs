@@ -10,7 +10,7 @@ namespace MSSC
         {
             var client = new MinecraftClient();
             client.Connect();
-            MincraftStatus json = client.GetStatus();
+            MinecraftStatus json = client.GetStatus();
             // The root page of your application
             MainPage = new ContentPage
             {

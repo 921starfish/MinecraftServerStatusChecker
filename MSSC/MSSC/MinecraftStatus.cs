@@ -28,7 +28,7 @@ namespace MSSC
         public List<ModList> modList { get; set; }
     }
 
-    public class MincraftStatus
+    public class MinecraftStatus
     {
         public string description { get; set; }
         public Players players { get; set; }
