@@ -52,9 +52,19 @@ namespace MSSC
             Flush(0);
             Flush(0);
             var buffer = new byte[4096*2];
-            _stream.Read(buffer, 0, buffer.Length);
+            byte[] data = new byte[1024];
+            string res = "";
+            using (MemoryStream ms = new MemoryStream())
+            {
+                int numBytesRead;
+                while ((numBytesRead = _stream.Read(data, 0, data.Length)) > 0)
+                {
+                    ms.Write(data, 0, numBytesRead);
+                }
+                res = Encoding.UTF8.GetString(ms.ToArray(), 0, (int)ms.Length);
+            }
             var jsonLength = ReadVarInt(buffer);
-            var res = ReadString(buffer, jsonLength);
+            //var res = ReadString(buffer, jsonLength);
             while (res[0] != '{')
             {
                res = res.Remove(0,1);
