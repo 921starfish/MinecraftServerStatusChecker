@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Codeplex.Data;
 using Newtonsoft.Json;
 
 namespace MSSC
@@ -40,7 +41,7 @@ namespace MSSC
             return client.Connected;
         }
 
-        public PingPayload GetStatus()
+        public dynamic GetStatus()
         {
             _buffer = new List<byte>();
             _stream = client.GetStream();
@@ -58,7 +59,7 @@ namespace MSSC
             {
                res = res.Remove(0,1);
             }
-            return JsonConvert.DeserializeObject<PingPayload>(res);
+            return DynamicJson.Parse(res);
         }
 
         internal byte ReadByte(byte[] buffer)
@@ -148,60 +149,5 @@ namespace MSSC
             _stream.Write(packetData, 0, packetData.Length);
             _stream.Write(buffer, 0, buffer.Length);
         }
-    }
-
-    /// <summary>
-    /// C# represenation of the following JSON file
-    /// https://gist.github.com/thinkofdeath/6927216
-    /// </summary>
-    class PingPayload
-    {
-        /// <summary>
-        /// Protocol that the server is using and the given name
-        /// </summary>
-        [JsonProperty(PropertyName = "version")]
-        public VersionPayload Version { get; set; }
-
-        [JsonProperty(PropertyName = "players")]
-        public PlayersPayload Players { get; set; }
-
-        [JsonProperty(PropertyName = "description")]
-        public string Motd { get; set; }
-
-        /// <summary>
-        /// Server icon, important to note that it's encoded in base 64
-        /// </summary>
-        [JsonProperty(PropertyName = "favicon")]
-        public string Icon { get; set; }
-    }
-
-    class VersionPayload
-    {
-        [JsonProperty(PropertyName = "protocol")]
-        public int Protocol { get; set; }
-
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
-    }
-
-    class PlayersPayload
-    {
-        [JsonProperty(PropertyName = "max")]
-        public int Max { get; set; }
-
-        [JsonProperty(PropertyName = "online")]
-        public int Online { get; set; }
-
-        [JsonProperty(PropertyName = "sample")]
-        public List<Player> Sample { get; set; }
-    }
-
-    class Player
-    {
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
-
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
     }
 }

@@ -8,9 +8,9 @@ namespace MSSC
     {
         public App()
         {
-            //var client = new MinecraftClient();
-            //client.Connect();
-            //var json = client.GetStatus();
+            var client = new MinecraftClient();
+            client.Connect();
+            MincraftStatus json = client.GetStatus();
             // The root page of your application
             MainPage = new ContentPage
             {
@@ -20,7 +20,7 @@ namespace MSSC
                     Children = {
                         new Label {
                             XAlign = TextAlignment.Center,
-                            Text ="こんにちは"
+                            Text = json.version.name
                         }
                     }
                 }
