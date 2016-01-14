@@ -69,6 +69,8 @@ namespace MSSC
             {
                res = res.Remove(0,1);
             }
+            _stream.Close();
+            client.Close();
             return DynamicJson.Parse(res);
         }
 
