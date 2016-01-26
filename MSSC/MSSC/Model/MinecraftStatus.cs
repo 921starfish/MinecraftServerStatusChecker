@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MSSC
+namespace MSSC.Model
 {
     public class Players
     {

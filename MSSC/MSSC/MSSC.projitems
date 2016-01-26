@@ -9,17 +9,21 @@
     <Import_RootNamespace>MSSC</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)DynamicJson.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MinecraftClient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MinecraftStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DynamicJson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MinecraftClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MinecraftStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
   </ItemGroup>
 </Project>

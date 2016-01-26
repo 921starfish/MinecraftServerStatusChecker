@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MSSC.View;
+using System;
 using System.Net.Mime;
 using Xamarin.Forms;
 
