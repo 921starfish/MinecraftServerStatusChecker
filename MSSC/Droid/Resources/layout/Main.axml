@@ -3,14 +3,52 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/linearLayout"
     android:minWidth="25px"
     android:minHeight="25px">
     <Button
         android:id="@+id/MyButton"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Hello" />
+        android:text="ここは最後に広告に置換" />
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:id="@+id/gridLayout1">
+        <Space
+            android:layout_width="10dip"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:id="@+id/space1" />
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Server Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:id="@+id/textView1"
+            android:gravity="fill"
+            android:layout_gravity="fill" />
+        <ImageView
+            android:src="@drawable/denpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:id="@+id/imageView2" />
+        <Space
+            android:layout_width="10dip"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:id="@+id/space2" />
+    </GridLayout>
     <Button
         android:id="@+id/PlusButton"
         android:text="⊕"
