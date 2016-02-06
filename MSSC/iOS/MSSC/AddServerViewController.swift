@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MyTableViewController:UITableViewController{
+class AddServerViewController:UITableViewController{
     
     private func getTableView()->UITableView{
       return view as! UITableView
@@ -38,6 +38,10 @@ class MyTableViewController:UITableViewController{
     
     @IBOutlet var DoneButton: UIBarButtonItem?
     @IBOutlet var CancelButton: UIBarButtonItem?
+    
+    @IBAction func onclickDoneButton(sender: UIBarButtonItem){
+        
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("toInputTextViewController",sender: nil)
