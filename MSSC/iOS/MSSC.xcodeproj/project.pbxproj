@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AA0633851C65816A0074BB7B /* AddServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0633841C65816A0074BB7B /* AddServerViewController.swift */; };
 		AA569F811C5A27E800325165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569F801C5A27E800325165 /* AppDelegate.swift */; };
-		AA569F831C5A27E800325165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569F821C5A27E800325165 /* ViewController.swift */; };
 		AA569F861C5A27E800325165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA569F841C5A27E800325165 /* Main.storyboard */; };
 		AA569F881C5A27E800325165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA569F871C5A27E800325165 /* Assets.xcassets */; };
 		AA569F8B1C5A27E800325165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA569F891C5A27E800325165 /* LaunchScreen.storyboard */; };
@@ -45,7 +44,6 @@
 		AA0633841C65816A0074BB7B /* AddServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServerViewController.swift; sourceTree = "<group>"; };
 		AA569F7D1C5A27E800325165 /* MSSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA569F801C5A27E800325165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA569F821C5A27E800325165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA569F851C5A27E800325165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA569F871C5A27E800325165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA569F8A1C5A27E800325165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,20 +111,12 @@
 		AA569F7F1C5A27E800325165 /* MSSC */ = {
 			isa = PBXGroup;
 			children = (
-				AA569F871C5A27E800325165 /* Assets.xcassets */,
-				AA569F841C5A27E800325165 /* Main.storyboard */,
-				AA569F891C5A27E800325165 /* LaunchScreen.storyboard */,
-				AA569F8C1C5A27E800325165 /* Info.plist */,
 				AA569F801C5A27E800325165 /* AppDelegate.swift */,
-				AA569F821C5A27E800325165 /* ViewController.swift */,
-				AA6CB0501C63A6EB002E03D0 /* InputTextViewController.swift */,
-				AA0633841C65816A0074BB7B /* AddServerViewController.swift */,
-				AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */,
-				AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */,
-				AAC316C11C6694A900365BDD /* DataManager.swift */,
-				AAC316C31C66ADF400365BDD /* MinecraftClient.swift */,
-				AAC316C51C66B0A600365BDD /* SwiftyJSON.swift */,
-				AAC316C71C66B23800365BDD /* MinecraftServerStatusChecker.swift */,
+				AA569F871C5A27E800325165 /* Assets.xcassets */,
+				AA569F8C1C5A27E800325165 /* Info.plist */,
+				AAC316C91C66BA1900365BDD /* Model */,
+				AAC316CB1C66BA4500365BDD /* View */,
+				AAC316CA1C66BA2C00365BDD /* Controller */,
 			);
 			path = MSSC;
 			sourceTree = "<group>";
@@ -147,6 +137,37 @@
 				AA569FA21C5A27E800325165 /* Info.plist */,
 			);
 			path = MSSCUITests;
+			sourceTree = "<group>";
+		};
+		AAC316C91C66BA1900365BDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAC316C11C6694A900365BDD /* DataManager.swift */,
+				AAC316C31C66ADF400365BDD /* MinecraftClient.swift */,
+				AAC316C51C66B0A600365BDD /* SwiftyJSON.swift */,
+				AAC316C71C66B23800365BDD /* MinecraftServerStatusChecker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AAC316CA1C66BA2C00365BDD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA6CB0501C63A6EB002E03D0 /* InputTextViewController.swift */,
+				AA0633841C65816A0074BB7B /* AddServerViewController.swift */,
+				AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AAC316CB1C66BA4500365BDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA569F841C5A27E800325165 /* Main.storyboard */,
+				AA569F891C5A27E800325165 /* LaunchScreen.storyboard */,
+				AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +304,6 @@
 				AAC316C41C66ADF400365BDD /* MinecraftClient.swift in Sources */,
 				AAC316C01C65E99600365BDD /* ServerTableViewController.swift in Sources */,
 				AAC316BB1C65B7E800365BDD /* PropatyTableViewCell.swift in Sources */,
-				AA569F831C5A27E800325165 /* ViewController.swift in Sources */,
 				AAC316C21C6694A900365BDD /* DataManager.swift in Sources */,
 				AA0633851C65816A0074BB7B /* AddServerViewController.swift in Sources */,
 				AAC316C61C66B0A600365BDD /* SwiftyJSON.swift in Sources */,
