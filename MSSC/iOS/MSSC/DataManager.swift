@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct SaveObject{
+class SaveObject{
     internal var length: Int = 0
     internal var serverArray: [(name:String, host:String, port:String)] = []
+    internal func append(name:String,host:String,port:String){
+        serverArray.append((name:name,host:host,port:port))
+        length += 1
+    }
+    internal func remove(index:Int){
+        serverArray.removeAtIndex(index)
+        length -= 1
+    }
 }
 
 class DataManager{
