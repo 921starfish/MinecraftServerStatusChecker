@@ -10,11 +10,33 @@ import Foundation
 import UIKit
 
 class MyTableViewController:UITableViewController{
+    
+    private func getTableView()->UITableView{
+      return view as! UITableView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        for section in 0..<getTableView().numberOfSections {
+            
+            for row in 0..<getTableView().numberOfRowsInSection(section) {
+                
+                let indexPath = NSIndexPath(forRow: row, inSection: section)
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! PropatyTableViewCell
+                if(cell.value?.text == ""){
+                    DoneButton?.enabled = false
+                    return
+                }
+            }
+        }
+        DoneButton?.enabled = true
     }
     private var subVC: InputTextViewController?
+    
+    @IBOutlet var DoneButton: UIBarButtonItem?
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("toInputTextViewController",sender: nil)

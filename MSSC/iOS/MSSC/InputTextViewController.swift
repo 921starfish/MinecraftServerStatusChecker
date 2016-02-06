@@ -13,10 +13,13 @@ class InputTextViewController: UITableViewController{
 
     @IBOutlet var inputTextField: UITextField?
     private var edittingPropaty:PropatyTableViewCell?
+    private var value:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        inputTextField?.text = value
         inputTextField?.becomeFirstResponder()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,5 +36,6 @@ class InputTextViewController: UITableViewController{
     internal func setPropaty(tableView: UITableView,indexPath: NSIndexPath){
        edittingPropaty = tableView.cellForRowAtIndexPath(indexPath) as? PropatyTableViewCell
        title = edittingPropaty?.propaty!.text
+       value = (edittingPropaty?.value?.text)!
     }
 }
