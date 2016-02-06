@@ -26,15 +26,15 @@ class DataManager{
     internal var data: SaveObject = SaveObject()
     
     static var instance :DataManager{
-    get{
-        if(_instance != nil){
-            return _instance!
+        get{
+            if(_instance != nil){
+                return _instance!
+            }else{
+                _instance = DataManager()
+                return _instance!
+            }
         }
-        else{
-            _instance = DataManager()
-            return _instance!
-        }
-    }}
+    }
     
     init(){
         data = load()

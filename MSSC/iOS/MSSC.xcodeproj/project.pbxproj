@@ -19,6 +19,9 @@
 		AAC316BB1C65B7E800365BDD /* PropatyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */; };
 		AAC316C01C65E99600365BDD /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */; };
 		AAC316C21C6694A900365BDD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316C11C6694A900365BDD /* DataManager.swift */; };
+		AAC316C41C66ADF400365BDD /* MinecraftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316C31C66ADF400365BDD /* MinecraftClient.swift */; };
+		AAC316C61C66B0A600365BDD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316C51C66B0A600365BDD /* SwiftyJSON.swift */; };
+		AAC316C81C66B23800365BDD /* MinecraftServerStatusChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316C71C66B23800365BDD /* MinecraftServerStatusChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropatyTableViewCell.swift; sourceTree = "<group>"; };
 		AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
 		AAC316C11C6694A900365BDD /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AAC316C31C66ADF400365BDD /* MinecraftClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinecraftClient.swift; sourceTree = "<group>"; };
+		AAC316C51C66B0A600365BDD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		AAC316C71C66B23800365BDD /* MinecraftServerStatusChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinecraftServerStatusChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,9 @@
 				AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */,
 				AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */,
 				AAC316C11C6694A900365BDD /* DataManager.swift */,
+				AAC316C31C66ADF400365BDD /* MinecraftClient.swift */,
+				AAC316C51C66B0A600365BDD /* SwiftyJSON.swift */,
+				AAC316C71C66B23800365BDD /* MinecraftServerStatusChecker.swift */,
 			);
 			path = MSSC;
 			sourceTree = "<group>";
@@ -271,12 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC316C41C66ADF400365BDD /* MinecraftClient.swift in Sources */,
 				AAC316C01C65E99600365BDD /* ServerTableViewController.swift in Sources */,
 				AAC316BB1C65B7E800365BDD /* PropatyTableViewCell.swift in Sources */,
 				AA569F831C5A27E800325165 /* ViewController.swift in Sources */,
 				AAC316C21C6694A900365BDD /* DataManager.swift in Sources */,
 				AA0633851C65816A0074BB7B /* AddServerViewController.swift in Sources */,
+				AAC316C61C66B0A600365BDD /* SwiftyJSON.swift in Sources */,
 				AA6CB0511C63A6EB002E03D0 /* InputTextViewController.swift in Sources */,
+				AAC316C81C66B23800365BDD /* MinecraftServerStatusChecker.swift in Sources */,
 				AA569F811C5A27E800325165 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
