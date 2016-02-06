@@ -2,8 +2,8 @@
 //  PropatyTableViewCell.swift
 //  MSSC
 //
-//  Created by 王一道 on 2016/02/06.
-//  Copyright © 2016年 王一道. All rights reserved.
+//  Created by wang on 2016/02/06.
+//  Copyright © 2016年 wang. All rights reserved.
 //
 
 import UIKit
