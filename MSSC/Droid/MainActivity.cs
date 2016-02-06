@@ -25,6 +25,12 @@ namespace MSSC.Droid
             Button button = FindViewById<Button>(Resource.Id.MyButton);
 
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+            Button plusButton = FindViewById<Button>(Resource.Id.PlusButton);
+
+
+
+
         }
     }
 }
