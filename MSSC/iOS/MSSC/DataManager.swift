@@ -14,6 +14,27 @@ struct SaveObject{
 }
 
 class DataManager{
+    private static var _instance :DataManager?
+    internal var data: SaveObject = SaveObject()
+    
+    static var instance :DataManager{
+    get{
+        if(_instance != nil){
+            return _instance!
+        }
+        else{
+            _instance = DataManager()
+            return _instance!
+        }
+    }}
+    
+    init(){
+        data = load()
+    }
+    
+    deinit{
+        save(data)
+    }
     
     func save(data :SaveObject){
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -28,7 +49,7 @@ class DataManager{
     }
     
     func load()->SaveObject{
-        var data = SaveObject()
+        data = SaveObject()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         data.length = userDefaults.integerForKey("length")
