@@ -28,9 +28,14 @@ namespace MSSC.Droid
 
             Button plusButton = FindViewById<Button>(Resource.Id.PlusButton);
 
+            plusButton.Click += plusButton_Click;
 
+        }
 
-
+        private void plusButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(AddActivity));
+            StartActivity(intent);
         }
     }
 }

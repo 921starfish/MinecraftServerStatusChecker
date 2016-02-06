@@ -11,7 +11,7 @@ namespace MSSC.View
 	{
         public MainPage ()
 		{
-			InitializeComponent();
+		    InitializeComponent();
 		}
 
     }
