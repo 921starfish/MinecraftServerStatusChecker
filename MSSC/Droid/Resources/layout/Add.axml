@@ -2,6 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:id="@+id/space1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input your address"
+        android:inputType="text"
+        android:id="@+id/address1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input your port"
+        android:inputType="text"
+        android:text="@string/DefaultPort"
+        android:id="@+id/port1" />
 </LinearLayout>
