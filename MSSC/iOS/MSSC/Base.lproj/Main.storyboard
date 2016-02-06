@@ -10,6 +10,7 @@
         <scene sceneID="7xE-Ph-Q2G">
             <objects>
                 <navigationController id="qza-PY-UEU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Z3t-KV-TMz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gVz-EK-7mp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,10 +154,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="サーバーの追加" id="cGw-Sp-ii9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZfX-50-KVS"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZfX-50-KVS">
+                            <connections>
+                                <segue destination="qza-PY-UEU" kind="presentation" animates="NO" modalTransitionStyle="partialCurl" id="WEZ-EO-5AT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="u7I-Xh-IvZ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="CancelButton" destination="ZfX-50-KVS" id="1Or-da-suN"/>
                         <outlet property="DoneButton" destination="u7I-Xh-IvZ" id="x4e-OA-CzX"/>
                         <outlet property="view" destination="TaJ-LG-qxl" id="haW-1k-USb"/>
                         <segue destination="aMe-R5-LCo" kind="show" identifier="toInputTextViewController" id="3oe-Fe-Ltt"/>
@@ -208,7 +214,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNY-pK-Yyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="-38"/>
+            <point key="canvasLocation" x="1620" y="-106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n4u-hw-3QJ">

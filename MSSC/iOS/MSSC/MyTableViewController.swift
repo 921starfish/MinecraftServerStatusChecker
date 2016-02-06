@@ -37,6 +37,7 @@ class MyTableViewController:UITableViewController{
     private var subVC: InputTextViewController?
     
     @IBOutlet var DoneButton: UIBarButtonItem?
+    @IBOutlet var CancelButton: UIBarButtonItem?
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("toInputTextViewController",sender: nil)
