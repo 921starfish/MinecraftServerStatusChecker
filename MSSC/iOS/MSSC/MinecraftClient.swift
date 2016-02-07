@@ -73,6 +73,9 @@ class MinecraftClient:NSObject,NSStreamDelegate {
         inputStream?.read(&buffer, maxLength: buffer.count)
         let jsonLength = try! readVarInt(buffer)
         var res = readString(buffer, length: jsonLength)
+        if(res == "Optional()"){
+            return ""
+        }
         while(res[res.startIndex] != "{"){
             res.removeAtIndex(res.startIndex)
         }

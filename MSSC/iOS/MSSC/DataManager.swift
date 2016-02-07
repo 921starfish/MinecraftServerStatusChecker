@@ -10,9 +10,9 @@ import Foundation
 
 class SaveObject{
     internal var length: Int = 0
-    internal var serverArray: [(name:String, host:String, port:String)] = []
-    internal func append(name:String,host:String,port:String){
-        serverArray.append((name:name,host:host,port:port))
+    internal var serverArray: [MinecraftServer] = []
+    internal func add(server: MinecraftServer){
+        serverArray.append(server)
         length += 1
     }
     internal func remove(index:Int){
@@ -20,11 +20,17 @@ class SaveObject{
         length -= 1
     }
 }
+struct MinecraftServer {
+    var name:String
+    var host:String
+    var port:String
+}
 
 class DataManager{
     private static var _instance :DataManager?
     internal var data: SaveObject = SaveObject()
-    
+    private var checker = MinecraftServerStatusChecker()
+
     static var instance :DataManager{
         get{
             if(_instance != nil){
@@ -38,10 +44,16 @@ class DataManager{
     
     init(){
         data = load()
+        checker.getAllStatus(data)
     }
     
     deinit{
         save(data)
+    }
+    
+    func add(server: MinecraftServer){
+        data.add(server)
+        checker.updateStatus(data.serverArray, index: data.serverArray.count - 1)
     }
     
     func save(data :SaveObject){
@@ -66,7 +78,7 @@ class DataManager{
             let name = userDefaults.stringForKey("name" + String(i))
             let host = userDefaults.stringForKey("host" + String(i))
             let port = userDefaults.stringForKey("port" + String(i))
-            data.serverArray.append((name:name!,host:host!,port:port!))
+            data.serverArray.append(MinecraftServer(name:name!,host:host!,port:port!))
         }
         return data
     }
