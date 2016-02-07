@@ -14,6 +14,7 @@
 		AA569F8B1C5A27E800325165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA569F891C5A27E800325165 /* LaunchScreen.storyboard */; };
 		AA569F961C5A27E800325165 /* MSSCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569F951C5A27E800325165 /* MSSCTests.swift */; };
 		AA569FA11C5A27E800325165 /* MSSCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569FA01C5A27E800325165 /* MSSCUITests.swift */; };
+		AA592E5D1C678A3600F61A10 /* ServerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA592E5C1C678A3600F61A10 /* ServerTableCell.swift */; };
 		AA6CB0511C63A6EB002E03D0 /* InputTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB0501C63A6EB002E03D0 /* InputTextViewController.swift */; };
 		AAC316BB1C65B7E800365BDD /* PropatyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */; };
 		AAC316C01C65E99600365BDD /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */; };
@@ -54,6 +55,7 @@
 		AA569F9C1C5A27E800325165 /* MSSCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSSCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA569FA01C5A27E800325165 /* MSSCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSSCUITests.swift; sourceTree = "<group>"; };
 		AA569FA21C5A27E800325165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA592E5C1C678A3600F61A10 /* ServerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTableCell.swift; sourceTree = "<group>"; };
 		AA6CB0501C63A6EB002E03D0 /* InputTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextViewController.swift; sourceTree = "<group>"; };
 		AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropatyTableViewCell.swift; sourceTree = "<group>"; };
 		AAC316BF1C65E99600365BDD /* ServerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				AA569F841C5A27E800325165 /* Main.storyboard */,
 				AA569F891C5A27E800325165 /* LaunchScreen.storyboard */,
 				AAC316BA1C65B7E700365BDD /* PropatyTableViewCell.swift */,
+				AA592E5C1C678A3600F61A10 /* ServerTableCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				AA6CB0511C63A6EB002E03D0 /* InputTextViewController.swift in Sources */,
 				AAC316C81C66B23800365BDD /* MinecraftServerStatusChecker.swift in Sources */,
 				AA569F811C5A27E800325165 /* AppDelegate.swift in Sources */,
+				AA592E5D1C678A3600F61A10 /* ServerTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,19 +27,27 @@
         <scene sceneID="h1D-Rs-1lD">
             <objects>
                 <tableViewController id="opn-h6-vN8" customClass="ServerTableViewController" customModule="MSSC" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hSq-zC-2k1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hSq-zC-2k1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bUe-lj-ZFg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bUe-lj-ZFg" customClass="ServerTableCell" customModule="MSSC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bUe-lj-ZFg" id="bO5-GV-FGD">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GlM-gf-toz">
+                                            <rect key="frame" x="16" y="7" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="name" destination="GlM-gf-toz" id="TEf-5Q-GK6"/>
                                     <segue destination="UtD-fI-4dH" kind="show" id="XZp-qj-Diu"/>
                                 </connections>
                             </tableViewCell>
@@ -57,9 +65,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="view" destination="hSq-zC-2k1" id="Gbe-ip-TlK"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tu-gz-rHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +169,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="u7I-Xh-IvZ">
                             <connections>
-                                <action selector="onclickDoneButton:" destination="dkk-WG-5H4" id="L7X-Rn-ZCU"/>
+                                <segue destination="qza-PY-UEU" kind="modal" identifier="Done" id="crt-FU-gOG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -286,4 +291,7 @@
             <point key="canvasLocation" x="-24" y="-106"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WEZ-EO-5AT"/>
+    </inferredMetricsTieBreakers>
 </document>

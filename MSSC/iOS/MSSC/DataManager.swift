@@ -53,6 +53,7 @@ class DataManager{
     
     func add(server: MinecraftServer){
         data.add(server)
+        save(data)
         checker.updateStatus(data.serverArray, index: data.serverArray.count - 1)
     }
     
