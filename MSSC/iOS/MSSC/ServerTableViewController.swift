@@ -38,5 +38,17 @@ class ServerTableViewController: UITableViewController{
         
         return cell
     }
-
+    
+    private var subVC: EditServerViewController?
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("toEditServerViewController",sender: nil)
+        subVC?.setServer(indexPath.row)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toEditServerViewController") {
+            subVC = (segue.destinationViewController as? EditServerViewController)!
+        }
+    }
 }
