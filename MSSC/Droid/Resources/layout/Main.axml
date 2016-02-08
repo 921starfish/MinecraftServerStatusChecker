@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:id="@+id/linearLayout1">
     <Button
         android:id="@+id/MyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ここは最後に広告に置換" />
+<!--
     <GridLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -49,6 +51,7 @@
             android:layout_column="4"
             android:id="@+id/space2" />
     </GridLayout>
+    -->
     <Button
         android:id="@+id/PlusButton"
         android:text="⊕"

@@ -20,6 +20,35 @@ namespace MSSC.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            LinearLayout linearLayout1 = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
+
+            GridLayout gridLayout1 = new GridLayout(this);
+
+            Space space1 = new Space(this);
+            space1.SetMinimumWidth(25);
+            gridLayout1.AddView(space1);
+
+            ImageView imageView1 = new ImageView(this);
+            imageView1.SetImageResource(Resource.Drawable.icon);
+            gridLayout1.AddView(imageView1);
+
+            TextView textView1 = new TextView(this);
+            textView1.Text = "Server Name";
+            textView1.SetTextAppearance(10);
+            textView1.Gravity = GravityFlags.Fill;
+            gridLayout1.AddView(textView1);
+
+            ImageView imageView2 = new ImageView(this);
+            imageView2.SetImageResource(Resource.Drawable.denpa);
+            gridLayout1.AddView(imageView2);
+
+            Space space2 = new Space(this);
+            space1.SetMinimumWidth(25);
+            gridLayout1.AddView(space2);
+
+            linearLayout1.AddView(gridLayout1);
+
+
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.MyButton);
