@@ -29,4 +29,10 @@
         android:inputType="text"
         android:text="@string/DefaultPort"
         android:id="@+id/port1" />
+    <Button
+        android:text="Done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doneButton"
+        android:layout_gravity="right" />
 </LinearLayout>

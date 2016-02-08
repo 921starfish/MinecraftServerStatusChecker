@@ -36,6 +36,15 @@ namespace MSSC.Droid
             base.OnResume();
 
             _myList = ServerDataList.GetInstance();
+   
+            // Addから戻ってきたときに追加する操作
+            var intent = this.Intent;
+            if (intent != null && intent.HasExtra("data"))
+            {
+                var serverData = intent.GetParcelableExtra("data") as ServerData;
+                _myList.ServerDatas.Add(serverData);
+            }
+
             int a = _myList.ServerDatas.Count;
             _gridLayouts = new GridLayout[a];
             _imageViews = new ImageView[a];

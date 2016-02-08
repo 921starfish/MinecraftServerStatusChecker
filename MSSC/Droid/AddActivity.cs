@@ -21,6 +21,22 @@ namespace MSSC.Droid
 
             // Set our view from the "Add" layout resource
             SetContentView(Resource.Layout.Add);
+
+            Button doneButton = FindViewById<Button>(Resource.Id.doneButton);
+            doneButton.Click += DoneButton_Click;
+        }
+
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            var name1 = FindViewById<EditText>(Resource.Id.name1);
+            var address1 = FindViewById<EditText>(Resource.Id.address1);
+            var port1 = FindViewById<EditText>(Resource.Id.port1);
+
+            var serverData = new ServerData(name1.Text, address1.Text, port1.Text);
+
+            var intent = new Intent(this, typeof(MainActivity));
+            intent.PutExtra("data", serverData);
+            StartActivity(intent);
         }
     }
 }
