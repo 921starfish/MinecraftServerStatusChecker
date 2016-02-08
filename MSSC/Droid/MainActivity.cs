@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -11,53 +12,53 @@ namespace MSSC.Droid
     [Activity(Label = "MSSC.Droid", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        private ServerDataList _myList;
+        private GridLayout[] _gridLayouts;
+        private ImageView[] _imageViews;
+        private TextView[] _textViews;
 
         protected override void OnCreate(Bundle bundle)
         {
+
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            LinearLayout linearLayout1 = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
-
-            GridLayout gridLayout1 = new GridLayout(this);
-
-            Space space1 = new Space(this);
-            space1.SetMinimumWidth(25);
-            gridLayout1.AddView(space1);
-
-            ImageView imageView1 = new ImageView(this);
-            imageView1.SetImageResource(Resource.Drawable.icon);
-            gridLayout1.AddView(imageView1);
-
-            TextView textView1 = new TextView(this);
-            textView1.Text = "Server Name";
-            textView1.SetTextAppearance(10);
-            textView1.Gravity = GravityFlags.Fill;
-            gridLayout1.AddView(textView1);
-
-            ImageView imageView2 = new ImageView(this);
-            imageView2.SetImageResource(Resource.Drawable.denpa);
-            gridLayout1.AddView(imageView2);
-
-            Space space2 = new Space(this);
-            space1.SetMinimumWidth(25);
-            gridLayout1.AddView(space2);
-
-            linearLayout1.AddView(gridLayout1);
-
-
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
-
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
-
             Button plusButton = FindViewById<Button>(Resource.Id.PlusButton);
 
             plusButton.Click += plusButton_Click;
+
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            _myList = ServerDataList.GetInstance();
+            int a = _myList.ServerDatas.Count;
+            _gridLayouts = new GridLayout[a];
+            _imageViews = new ImageView[a];
+            _textViews = new TextView[a];
+
+            LinearLayout linearLayout1 = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
+
+            for (int i = 0; i < a; i++)
+            {
+                _gridLayouts[i] = new GridLayout(this);
+
+                _imageViews[i] = new ImageView(this);
+                _imageViews[i].SetImageResource(Resource.Drawable.icon);
+                _gridLayouts[i].AddView(_imageViews[i]);
+
+                _textViews[i] = new TextView(this);
+                _textViews[i].Text = _myList.ServerDatas[i].Name;
+                _textViews[i].SetTextAppearance(10);
+                _textViews[i].Gravity = GravityFlags.Fill;
+                _gridLayouts[i].AddView(_textViews[i]);
+
+                linearLayout1.AddView(_gridLayouts[i]);
+            }
 
         }
 

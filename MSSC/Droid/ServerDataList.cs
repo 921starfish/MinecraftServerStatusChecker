@@ -26,7 +26,11 @@ namespace MSSC.Droid
         private ServerDataList()
         {
             //TODO :デシリアライズ処理に書き換える
-            ServerDatas = new List<ServerData> {new ServerData("サーバー名", "ArLEWorks.sytes.net", "25565")};
+            ServerDatas = new List<ServerData>
+            {
+                new ServerData("來知サーバ", "ArLEWorks.sytes.net", "25565"),
+                new ServerData("星野サーバ", "kirby-6hmru2ev.cloudapp.net", "25565")
+            };
         }
     }
 }
