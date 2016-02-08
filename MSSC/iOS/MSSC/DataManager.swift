@@ -90,8 +90,10 @@ class DataManager{
             let descripton = statusList.last?.description
             if((descripton != nil) && (descripton != "")){
                 self[length - 1].server.name = (statusList.last?.description)!
-            }else{
+            }else if(statusList.last?.version.name != nil){
                 self[length - 1].server.name = "Minecraft Server" + (statusList.last?.version.name)!
+            }else{
+                self[length - 1].server.name = "Minecraft Server"
             }
         }
         
