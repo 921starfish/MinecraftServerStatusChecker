@@ -67,7 +67,7 @@ class DataManager{
     }
     
     deinit{
-        save(serverdata)
+        save()
     }
     
     func updateStatus(){
@@ -88,6 +88,10 @@ class DataManager{
             }
         }
         
+        save()
+    }
+    
+    func save(){
         save(serverdata)
     }
     

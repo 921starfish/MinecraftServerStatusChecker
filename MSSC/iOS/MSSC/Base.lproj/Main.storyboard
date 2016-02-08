@@ -188,7 +188,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLw-9J-jCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="-948"/>
+            <point key="canvasLocation" x="776" y="-948"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="TLP-p0-JNe">
@@ -232,7 +232,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNY-pK-Yyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="-96"/>
+            <point key="canvasLocation" x="802" y="-106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n4u-hw-3QJ">
@@ -248,7 +248,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvd-BO-xOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-839" y="-948"/>
+            <point key="canvasLocation" x="-24" y="-932"/>
         </scene>
         <!--詳細-->
         <scene sceneID="NlI-t4-Xn2">
@@ -422,7 +422,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSw-UE-dIE">
-                                                    <rect key="frame" x="68" y="8" width="524" height="27.5"/>
+                                                    <rect key="frame" x="68" y="7" width="524" height="27.5"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -461,6 +461,7 @@
                         <outlet property="nameCell" destination="MTq-sO-59q" id="Rga-Ji-Z22"/>
                         <outlet property="onlineCell" destination="zwo-hE-92f" id="5ao-rF-KOQ"/>
                         <outlet property="portCell" destination="wo9-KF-TLG" id="hg5-Vl-FlN"/>
+                        <segue destination="aMe-R5-LCo" kind="show" identifier="toInputTextViewController" id="zy9-tl-b1D"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2e-2f-XrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -470,5 +471,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WEZ-EO-5AT"/>
+        <segue reference="zy9-tl-b1D"/>
     </inferredMetricsTieBreakers>
 </document>

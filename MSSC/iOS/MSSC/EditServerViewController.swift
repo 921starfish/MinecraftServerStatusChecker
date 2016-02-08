@@ -3,7 +3,7 @@
 //  MSSC
 //
 //  Created by wang on 2016/02/08.
-//  Copyright © 2016年 王一道. All rights reserved.
+//  Copyright © 2016年 wang. All rights reserved.
 //
 
 import UIKit
@@ -20,6 +20,7 @@ class EditServerViewController: UITableViewController {
     func setServer(index:Int){
         self.index = index
     }
+    
     override func viewDidLoad() {
         nameCell?.value?.text = DataManager.instance[index!].server.name
         hostCell?.value?.text = DataManager.instance[index!].server.host
@@ -28,4 +29,28 @@ class EditServerViewController: UITableViewController {
         descriptionCell?.value?.text = DataManager.instance[index!].status.description
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        DataManager.instance[index!].server.name = (nameCell?.value?.text)!
+        DataManager.instance[index!].server.host = (hostCell?.value?.text)!
+        DataManager.instance[index!].server.port = (portCell?.value?.text)!
+        DataManager.instance.save()
+    }
+    
+    private var subVC: InputTextViewController?
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.section < 2){
+            performSegueWithIdentifier("toInputTextViewController",sender: nil)
+            subVC?.setPropaty(tableView, indexPath: indexPath)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toInputTextViewController") {
+            subVC = (segue.destinationViewController as? InputTextViewController)!
+        }
+    }
+
 }
