@@ -12,7 +12,8 @@ struct StatusFormat {
         version = Version(name:json["version"]["name"].string,
             _protocol:json["version"]["protocol"].string)
         
-        let description = json["description"].string
+        description = json["description"].string
+        favicon = json["favicon"].string
         
         var sample:[Sample] = []
         let a = json["players"]["sample"].arrayValue
@@ -22,14 +23,14 @@ struct StatusFormat {
         
         players = Players(max: json["players"]["max"].int,
             online: json["players"]["online"].int,
-            sample: sample,
-            description: description,
-            favicon: json["favation"].string)
+            sample: sample)
         
     }
     var version :Version!
     var players :Players!
-
+    var description:String!
+    var favicon:String!
+    
     struct Version{
         var name:String!
         var _protocol:String!
@@ -38,8 +39,6 @@ struct StatusFormat {
         var max:Int!
         var online:Int!
         var sample:[Sample]!
-        var description:String!
-        var favicon:String!
     }
     struct Sample{
         var name:String!
@@ -48,7 +47,6 @@ struct StatusFormat {
 }
 
 class MinecraftServerStatusChecker{
-    var serverlist:[(server: MinecraftServer,data: StatusFormat)] = []
     
     private func getStatus(host:String, port:String)->StatusFormat{
         let client = MinecraftClient(host: host, port: port)
@@ -58,19 +56,25 @@ class MinecraftServerStatusChecker{
         return StatusFormat(json: json)
     }
     
-    func getAllStatus(data: SaveObject){
-        serverlist = []
-        for(var i = 0; i < data.length; i++){
-            serverlist.append((data.serverArray[i],getStatus(data.serverArray[i].host, port: data.serverArray[i].port)))
+    func getAllStatus(array: [MinecraftServer])->[StatusFormat]{
+        var statusList: [StatusFormat] = []
+        for(var i = 0; i < array.count; i++){
+            statusList.append(getStatus(array[i].host, port: array[i].port))
         }
+        return statusList
     }
 
-    func updateStatus(array: [MinecraftServer], index:Int){
-        if(index == serverlist.count){
-            serverlist.append((server: array[index], data: getStatus(array[index].host, port: array[index].port)))
+    func updateStatus(array: [MinecraftServer],var statusList: [StatusFormat], index:Int)->[StatusFormat]{
+        let server: MinecraftServer = array[index]
+        if(index == statusList.count){
+            statusList.append(getStatus(server.host, port: server.port))
         }
-        else if(index < serverlist.count){
-            serverlist[index].data = getStatus(array[index].host, port: array[index].port)
+        else if(index < statusList.count){
+            statusList[index] = getStatus(server.host, port: server.port)
         }
+        else if(index > statusList.count){
+            statusList = getAllStatus(array)
+        }
+        return statusList
     }
 }

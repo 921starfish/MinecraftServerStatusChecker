@@ -27,10 +27,29 @@ struct MinecraftServer {
 }
 
 class DataManager{
+    
+    private var serverdata: SaveObject = SaveObject()
+    private var statusList: [StatusFormat] = []
+    
+    subscript(index: Int)->(server: MinecraftServer,status: StatusFormat){
+        get{
+            return (serverdata.serverArray[index],statusList[index])
+        }
+        set(value){
+            serverdata.serverArray[index] = value.server
+            statusList[index] = value.status
+        }
+    }
+    
+    var length: Int{
+        get{
+            return serverdata.length
+        }
+    }
+    
     private static var _instance :DataManager?
-    internal var data: SaveObject = SaveObject()
     private var checker = MinecraftServerStatusChecker()
-
+    
     static var instance :DataManager{
         get{
             if(_instance != nil){
@@ -43,18 +62,33 @@ class DataManager{
     }
     
     init(){
-        data = load()
-        checker.getAllStatus(data)
+        serverdata = load()
+        updateStatus()
     }
     
     deinit{
-        save(data)
+        save(serverdata)
+    }
+    
+    func updateStatus(){
+        statusList = checker.getAllStatus(serverdata.serverArray)
     }
     
     func add(server: MinecraftServer){
-        data.add(server)
-        save(data)
-        checker.updateStatus(data.serverArray, index: data.serverArray.count - 1)
+        serverdata.add(server)
+        
+        statusList = checker.updateStatus(serverdata.serverArray,statusList: statusList, index: length - 1)
+        
+        if(server.name == ""){
+            let descripton = statusList.last?.description
+            if((descripton != nil) && (descripton != "")){
+                self[length - 1].server.name = (statusList.last?.description)!
+            }else{
+                self[length - 1].server.name = "Minecraft Server" + (statusList.last?.version.name)!
+            }
+        }
+        
+        save(serverdata)
     }
     
     func save(data :SaveObject){
@@ -70,17 +104,17 @@ class DataManager{
     }
     
     func load()->SaveObject{
-        data = SaveObject()
+        serverdata = SaveObject()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        data.length = userDefaults.integerForKey("length")
+        serverdata.length = userDefaults.integerForKey("length")
         
-        for(var i = 0; i < data.length; i++){
+        for(var i = 0; i < serverdata.length; i++){
             let name = userDefaults.stringForKey("name" + String(i))
             let host = userDefaults.stringForKey("host" + String(i))
             let port = userDefaults.stringForKey("port" + String(i))
-            data.serverArray.append(MinecraftServer(name:name!,host:host!,port:port!))
+            serverdata.serverArray.append(MinecraftServer(name:name!,host:host!,port:port!))
         }
-        return data
+        return serverdata
     }
 }

@@ -27,14 +27,14 @@ class ServerTableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.instance.data.serverArray.count
+        return DataManager.instance.length
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ServerTableCell
         
-        cell.name?.text = DataManager.instance.data.serverArray[indexPath.row].name
+        cell.name?.text = DataManager.instance[indexPath.row].server.name
         
         return cell
     }

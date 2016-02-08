@@ -62,7 +62,7 @@ class AddServerViewController:UITableViewController{
             let host = cell.value?.text
             cell = getTableView().cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! PropatyTableViewCell
             let port = cell.value?.text
-            DataManager.instance.add(MinecraftServer(name: "Minecraft Server",host: host!,port: port!))
+            DataManager.instance.add(MinecraftServer(name: "",host: host!,port: port!))
         }
     }
 }
