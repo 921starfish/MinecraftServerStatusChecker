@@ -13,13 +13,16 @@ using Java.Interop;
 
 namespace MSSC.Droid
 {
-    public class AddressAndPort : Java.Lang.Object, IParcelable
+    public class ServerData : Java.Lang.Object, IParcelable
     {
+        public string Name { get; private set; }
         public string Address { get; private set; }
         public string Port { get; private set; }
 
-        public AddressAndPort(string address, string port)
+
+        public ServerData(string name, string address, string port)
         {
+            this.Name = name;
             this.Address = address;
             this.Port = port;
         }
@@ -33,6 +36,7 @@ namespace MSSC.Droid
 
         public void WriteToParcel(Parcel dest, ParcelableWriteFlags flags)
         {
+            dest.WriteString(this.Name);
             dest.WriteString(this.Address);
             dest.WriteString(this.Port);
         }
@@ -50,10 +54,11 @@ namespace MSSC.Droid
         {
             Java.Lang.Object IParcelableCreator.CreateFromParcel(Parcel source)
             {
+                var name = source.ReadString();
                 var address = source.ReadString();
-                var age = source.ReadString();
+                var port = source.ReadString();
 
-                return new AddressAndPort(address, age);
+                return new ServerData(name, address, port);
             }
 
             Java.Lang.Object[] IParcelableCreator.NewArray(int size)

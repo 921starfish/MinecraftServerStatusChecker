@@ -12,6 +12,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Input your server name"
+        android:inputType="text"
+        android:text="A Minecraft Server"
+        android:id="@+id/name1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Input your address"
         android:inputType="text"
         android:id="@+id/address1" />
