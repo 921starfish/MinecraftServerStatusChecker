@@ -3400,6 +3400,15 @@ namespace MSSC.Droid
 			// aapt resource value: 0x7f0b0028
 			public const int bottom = 2131427368;
 			
+			// aapt resource value: 0x7f0b0089
+			public const int button1 = 2131427465;
+			
+			// aapt resource value: 0x7f0b008b
+			public const int button2 = 2131427467;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int button3 = 2131427468;
+			
 			// aapt resource value: 0x7f0b004b
 			public const int buttonPanel = 2131427403;
 			
@@ -3661,6 +3670,12 @@ namespace MSSC.Droid
 			// aapt resource value: 0x7f0b0068
 			public const int snackbar_text = 2131427432;
 			
+			// aapt resource value: 0x7f0b0088
+			public const int space1 = 2131427464;
+			
+			// aapt resource value: 0x7f0b008a
+			public const int space2 = 2131427466;
+			
 			// aapt resource value: 0x7f0b0064
 			public const int space3 = 2131427428;
 			
@@ -3702,6 +3717,9 @@ namespace MSSC.Droid
 			
 			// aapt resource value: 0x7f0b0048
 			public const int textSpacerNoButtons = 2131427400;
+			
+			// aapt resource value: 0x7f0b008d
+			public const int textView1 = 2131427469;
 			
 			// aapt resource value: 0x7f0b0081
 			public const int time = 2131427457;
@@ -3928,7 +3946,10 @@ namespace MSSC.Droid
 			public const int select_dialog_singlechoice_material = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int support_simple_spinner_dropdown_item = 2130903089;
+			public const int ServerInformation = 2130903089;
+			
+			// aapt resource value: 0x7f030032
+			public const int support_simple_spinner_dropdown_item = 2130903090;
 			
 			static Layout()
 			{

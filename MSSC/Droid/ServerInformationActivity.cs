@@ -12,15 +12,17 @@ using Android.Widget;
 
 namespace MSSC.Droid
 {
-    [Activity(Label = "AddActivity")]
-    public class AddActivity : Activity
+    [Activity(Label = "ServerInformationActivity")]
+    public class ServerInformationActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "Add" layout resource
-            SetContentView(Resource.Layout.Add);
+            // Set our view from the "ServerInformation" layout resource
+            SetContentView(Resource.Layout.ServerInformation);
+
+            // Create your application here
         }
     }
 }
