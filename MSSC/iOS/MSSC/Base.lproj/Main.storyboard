@@ -27,13 +27,13 @@
         <scene sceneID="h1D-Rs-1lD">
             <objects>
                 <tableViewController id="opn-h6-vN8" customClass="ServerTableViewController" customModule="MSSC" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hSq-zC-2k1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hSq-zC-2k1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bUe-lj-ZFg" customClass="ServerTableCell" customModule="MSSC" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bUe-lj-ZFg" id="bO5-GV-FGD">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -453,7 +453,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="詳細" id="FEn-tt-pDD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="pBe-i2-emq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="pBe-i2-emq">
+                            <connections>
+                                <action selector="onClickTrashButton:" destination="UtD-fI-4dH" id="5HX-Xf-rDL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionCell" destination="8hq-tj-5hZ" id="N7z-Ge-jBU"/>

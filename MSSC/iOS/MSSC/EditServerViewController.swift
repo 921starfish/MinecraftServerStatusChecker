@@ -16,6 +16,28 @@ class EditServerViewController: UITableViewController {
     @IBOutlet var onlineCell: PropatyTableViewCell? = PropatyTableViewCell()
     @IBOutlet var descriptionCell: PropatyTableViewCell? = PropatyTableViewCell()
     
+    @IBAction func onClickTrashButton(sender: AnyObject){
+        // UIAlertControllerを作成する.
+        let myAlert: UIAlertController = UIAlertController(title: "注意", message: "このサーバーの情報を消します。", preferredStyle: .Alert)
+        
+        // OKのアクションを作成する.
+        let myOkAction = UIAlertAction(title: "はい", style: .Default) { action in
+               self.remove(self.index!)     }
+        let myCancelAction = UIAlertAction(title: "キャンセル", style: .Default) { action in
+        }
+        // OKのActionを追加する.
+        myAlert.addAction(myOkAction)
+        myAlert.addAction(myCancelAction)
+        // UIAlertを発動する.
+        presentViewController(myAlert, animated: true, completion: nil)
+       
+    }
+    
+    func remove(index: Int){
+        DataManager.instance.remove(self.index!)
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     private var index: Int?
     func setServer(index:Int){
         self.index = index

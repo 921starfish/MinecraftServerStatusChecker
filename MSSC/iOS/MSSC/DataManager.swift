@@ -41,6 +41,13 @@ class DataManager{
         }
     }
     
+    func remove(index:Int){
+        serverdata.remove(index)
+        statusList.removeAtIndex(index)
+        
+        save()
+    }
+    
     var length: Int{
         get{
             return serverdata.length
