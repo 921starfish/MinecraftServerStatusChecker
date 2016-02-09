@@ -87,14 +87,14 @@ class DataManager{
         statusList = checker.updateStatus(serverdata.serverArray,statusList: statusList, index: length - 1)
         
         if(server.name == ""){
-            let descripton = statusList.last?.description
-            if((descripton != nil) && (descripton != "")){
-                self[length - 1].server.name = (statusList.last?.description)!
-            }else if(statusList.last?.version.name != nil){
-                self[length - 1].server.name = "Minecraft Server" + (statusList.last?.version.name)!
-            }else{
-                self[length - 1].server.name = "Minecraft Server"
+            var servername:String = ""
+            for(var i = 0;i < server.host.lengthOfBytesUsingEncoding(NSASCIIStringEncoding); i++){
+                if(String(server.host[server.host.startIndex.advancedBy(i)]) == "."){
+                    servername = server.host.substringToIndex(server.host.startIndex.advancedBy(i)) + " Server"
+                    break
+                }
             }
+            self[length - 1].server.name = servername
         }
         
         save()
