@@ -70,13 +70,15 @@ class MinecraftClient:NSObject,NSStreamDelegate {
         flush(0);
         flush(0);
         var buffer:[UInt8] = Array<UInt8>(count: 4096*2, repeatedValue: 0)
-        var t: Int = 1
         var res: String = ""
-        while(t > 0){
-            t = (inputStream?.read(&buffer, maxLength: buffer.count))!
-            let jsonLength = try! readVarInt(buffer)
-            res += readString(buffer, length: jsonLength)
+        (inputStream?.read(&buffer, maxLength: buffer.count))!
+        let jsonLength = try! readVarInt(buffer)
+        res = readString(buffer, length: jsonLength)
+        
+        if(res.rangeOfString(",\"modinfo") != nil){
+            res = res.substringToIndex((res.rangeOfString(",\"modinfo")?.startIndex)!) + "}"
         }
+        
         print(res)
         if(res == "Optional()" || res == "nil" || res == ""){
             return ""
