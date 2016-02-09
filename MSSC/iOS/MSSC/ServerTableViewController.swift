@@ -39,7 +39,12 @@ class ServerTableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ServerTableCell
         
         cell.name?.text = DataManager.instance[indexPath.row].server.name
-        
+        if(DataManager.instance[indexPath.row].status.players.online == nil){
+            cell.online?.enabled = false
+        }
+        else{
+            cell.online?.enabled = true
+        }
         return cell
     }
     

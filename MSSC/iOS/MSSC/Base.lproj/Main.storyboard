@@ -43,15 +43,29 @@
                                             <rect key="frame" x="13" y="4" width="35" height="35"/>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minecraft Server 1.8.9" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GlM-gf-toz">
-                                            <rect key="frame" x="63" y="7" width="438" height="30"/>
+                                            <rect key="frame" x="63" y="7.5" width="159" height="28.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="1454998357_icon-wifi" disabledBackground="exclamation3" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-8p-cBw">
+                                            <rect key="frame" x="571" y="10" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="8kn-sQ-QcJ"/>
+                                                <constraint firstAttribute="width" constant="21" id="PTt-M5-63H"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ewo-8p-cBw" firstAttribute="trailing" secondItem="bO5-GV-FGD" secondAttribute="trailingMargin" id="J8a-4U-k8r"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ewo-8p-cBw" secondAttribute="bottom" id="N9T-wq-K4T"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="name" destination="GlM-gf-toz" id="TEf-5Q-GK6"/>
+                                    <outlet property="online" destination="ewo-8p-cBw" id="fpL-aG-epq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,6 +75,7 @@
                             <outlet property="delegate" destination="opn-h6-vN8" id="OUD-ly-Dek"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="サーバー" id="wUj-eO-pT7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l4S-A4-d9e">
                             <connections>
@@ -68,6 +83,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="UtD-fI-4dH" kind="show" identifier="toEditServerViewController" id="8z5-TO-fdA"/>
                     </connections>
@@ -473,6 +489,10 @@
             <point key="canvasLocation" x="-24" y="-106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1454998357_icon-wifi" width="128" height="128"/>
+        <image name="exclamation3" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WEZ-EO-5AT"/>
         <segue reference="zy9-tl-b1D"/>
