@@ -69,8 +69,10 @@ class DataManager{
     }
     
     init(){
-        serverdata = load()
-        updateStatus()
+        load()
+        for(var i = 0; i < length; i++){
+            statusList.append(StatusFormat(json: JSON.parse("{}")))
+        }
     }
     
     deinit{
@@ -116,7 +118,7 @@ class DataManager{
         }
     }
     
-    func load()->SaveObject{
+    func load(){
         serverdata = SaveObject()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -128,6 +130,5 @@ class DataManager{
             let port = userDefaults.stringForKey("port" + String(i))
             serverdata.serverArray.append(MinecraftServer(name:name!,host:host!,port:port!))
         }
-        return serverdata
     }
 }

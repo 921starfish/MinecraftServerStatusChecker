@@ -15,6 +15,7 @@ class ServerTableViewController: UITableViewController{
     }
     
     override func viewDidAppear(animated: Bool) {
+        DataManager.instance.updateStatus()
         self.tableView.reloadData()
     }
     

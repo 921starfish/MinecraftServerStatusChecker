@@ -69,14 +69,14 @@ class MinecraftClient:NSObject,NSStreamDelegate {
         writeVarInt(1);
         flush(0);
         flush(0);
-        var buffer = Array<UInt8>(count: 4096*2, repeatedValue: 0)
-        
-        while(inputStream?.read(&buffer, maxLength: buffer.count) > 0){
-        
+        var buffer:[UInt8] = Array<UInt8>(count: 4096*2, repeatedValue: 0)
+        var t: Int = 1
+        var res: String = ""
+        while(t > 0){
+            t = (inputStream?.read(&buffer, maxLength: buffer.count))!
+            let jsonLength = try! readVarInt(buffer)
+            res += readString(buffer, length: jsonLength)
         }
-        let jsonLength = try! readVarInt(buffer)
-        print("jsonLength: " + String(jsonLength))
-        var res = readString(buffer, length: jsonLength)
         print(res)
         if(res == "Optional()" || res == "nil" || res == ""){
             return ""
