@@ -11,4 +11,5 @@ import UIKit
 class ServerTableCell: UITableViewCell {
     @IBOutlet var name: UITextField?
     @IBOutlet var online: UITextField?
+    @IBOutlet var icon: UITextField?
 }

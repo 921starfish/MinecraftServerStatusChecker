@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA0633851C65816A0074BB7B /* AddServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0633841C65816A0074BB7B /* AddServerViewController.swift */; };
 		AA0F17291C6860A8003F347B /* EditServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F17281C6860A8003F347B /* EditServerViewController.swift */; };
+		AA0F17311C69DE98003F347B /* Minecrafter_3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA0F17301C69DE98003F347B /* Minecrafter_3.ttf */; };
 		AA569F811C5A27E800325165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA569F801C5A27E800325165 /* AppDelegate.swift */; };
 		AA569F861C5A27E800325165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA569F841C5A27E800325165 /* Main.storyboard */; };
 		AA569F881C5A27E800325165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA569F871C5A27E800325165 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		AA0633841C65816A0074BB7B /* AddServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServerViewController.swift; sourceTree = "<group>"; };
 		AA0F17281C6860A8003F347B /* EditServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditServerViewController.swift; sourceTree = "<group>"; };
+		AA0F17301C69DE98003F347B /* Minecrafter_3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecrafter_3.ttf; sourceTree = "<group>"; };
 		AA569F7D1C5A27E800325165 /* MSSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA569F801C5A27E800325165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA569F851C5A27E800325165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		AA569F7F1C5A27E800325165 /* MSSC */ = {
 			isa = PBXGroup;
 			children = (
+				AA0F17301C69DE98003F347B /* Minecrafter_3.ttf */,
 				AA569F801C5A27E800325165 /* AppDelegate.swift */,
 				AA569F871C5A27E800325165 /* Assets.xcassets */,
 				AA569F8C1C5A27E800325165 /* Info.plist */,
@@ -283,6 +286,7 @@
 				AA569F8B1C5A27E800325165 /* LaunchScreen.storyboard in Resources */,
 				AA569F881C5A27E800325165 /* Assets.xcassets in Resources */,
 				AA569F861C5A27E800325165 /* Main.storyboard in Resources */,
+				AA0F17311C69DE98003F347B /* Minecrafter_3.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

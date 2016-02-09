@@ -44,7 +44,11 @@ class ServerTableViewController: UITableViewController{
         }
         else{
             cell.online?.enabled = true
+            let online = DataManager.instance[indexPath.row].status.players.online
+            let max = DataManager.instance[indexPath.row].status.players.max
+            cell.name?.text = (cell.name?.text)! +  (NSString(format: " (%d/%d)",online,max) as String)
         }
+        cell.icon?.text = cell.name?.text?.substringToIndex((cell.name?.text?.startIndex.advancedBy(1))!)
         return cell
     }
     
