@@ -9,11 +9,21 @@
 import UIKit
 
 class ServerTableViewController: UITableViewController{
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "引っ張って更新")
+        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
     }
-    
+    func refresh()
+    {
+        // 更新するコード(webView.reload()など)
+        DataManager.instance.updateStatus()
+        self.tableView.reloadData()
+        refreshControl!.endRefreshing()
+    }
     override func viewDidAppear(animated: Bool) {
         DataManager.instance.updateStatus()
         self.tableView.reloadData()
