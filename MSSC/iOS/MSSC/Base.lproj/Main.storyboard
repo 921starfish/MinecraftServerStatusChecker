@@ -50,16 +50,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="1454998357_icon-wifi" disabledBackground="exclamation3" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-8p-cBw">
-                                            <rect key="frame" x="577" y="20" width="15" height="15.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="gec-ak-qsp"/>
-                                                <constraint firstAttribute="width" constant="15" id="q6c-zr-F75"/>
-                                            </constraints>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="M" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-It-VNc">
                                             <rect key="frame" x="23" y="4" width="35" height="35"/>
                                             <color key="backgroundColor" red="0.83588810948910941" green="0.83893448137145155" blue="0.84990592277486909" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,6 +62,19 @@
                                             </constraints>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="MineCrafter-3" family="MineCrafter 3" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="1454998357_icon-wifi" disabledBackground="exclamation3" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-8p-cBw">
+                                            <rect key="frame" x="577" y="14" width="15" height="15.5"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="gec-ak-qsp"/>
+                                                <constraint firstAttribute="width" constant="15" id="q6c-zr-F75"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -271,6 +274,54 @@
             </objects>
             <point key="canvasLocation" x="802" y="-106"/>
         </scene>
+        <!--オンライン-->
+        <scene sceneID="1d0-9N-c1M">
+            <objects>
+                <tableViewController title="オンライン" id="ZUt-MI-MTq" customClass="OnlineTableViewController" customModule="MSSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lYm-ek-68w">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="0xA-Fu-BJl" customClass="PlayersCell" customModule="MSSC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0xA-Fu-BJl" id="NQn-fk-Ecf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hanainashi" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-S6-43g">
+                                            <rect key="frame" x="8" y="18.5" width="584" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cdff8c56-4d65-4c0b-a233-6fd0a735a854" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1s-yG-L9y">
+                                            <rect key="frame" x="0.0" y="13" width="592" height="27.5"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="G1s-yG-L9y" firstAttribute="trailing" secondItem="NQn-fk-Ecf" secondAttribute="trailingMargin" id="cGI-3g-VQw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="id" destination="G1s-yG-L9y" id="IsB-PW-mD2"/>
+                                    <outlet property="name" destination="JIC-S6-43g" id="y4H-tX-hZS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZUt-MI-MTq" id="Kvs-Ld-F5q"/>
+                            <outlet property="delegate" destination="ZUt-MI-MTq" id="zWB-SZ-gP2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKq-7q-xo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="755"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="n4u-hw-3QJ">
             <objects>
@@ -285,7 +336,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvd-BO-xOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="-932"/>
+            <point key="canvasLocation" x="-24" y="-948"/>
         </scene>
         <!--詳細-->
         <scene sceneID="NlI-t4-Xn2">
@@ -444,6 +495,7 @@
                                         <connections>
                                             <outlet property="propaty" destination="xA7-j5-6jJ" id="CTU-AR-fm1"/>
                                             <outlet property="value" destination="pj7-YV-CQL" id="Vdi-Ec-Ycy"/>
+                                            <segue destination="ZUt-MI-MTq" kind="show" id="afy-OY-qpg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8hq-tj-5hZ" customClass="PropatyTableViewCell" customModule="MSSC" customModuleProvider="target">
@@ -479,6 +531,7 @@
                                         <connections>
                                             <outlet property="propaty" destination="8FO-Ru-5Jo" id="Tj2-8o-Uv3"/>
                                             <outlet property="value" destination="RSw-UE-dIE" id="nfW-kl-M1f"/>
+                                            <segue destination="KEt-MN-JDc" kind="show" identifier="toTextView" id="GXJ-2b-2Ax"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -508,6 +561,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2e-2f-XrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-24" y="-106"/>
+        </scene>
+        <!--Description-->
+        <scene sceneID="Pj4-z7-EEN">
+            <objects>
+                <viewController title="Description" id="KEt-MN-JDc" customClass="DescriptionViewController" customModule="MSSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" id="r0x-3l-8Ee">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <connections>
+                        <outlet property="descriptionText" destination="r0x-3l-8Ee" id="RMu-dV-gcR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SH2-Ul-rGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-24" y="755"/>
         </scene>
     </scenes>
     <resources>

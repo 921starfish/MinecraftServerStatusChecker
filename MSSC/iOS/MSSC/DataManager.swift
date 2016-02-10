@@ -30,6 +30,15 @@ class DataManager{
     
     private var serverdata: SaveObject = SaveObject()
     private var statusList: [StatusFormat] = []
+    var currentIndex:Int?
+    var current:(server: MinecraftServer,status: StatusFormat){
+        get{
+            return self[currentIndex!]
+        }
+        set(value){
+            self[currentIndex!] = value
+        }
+    }
     
     subscript(index: Int)->(server: MinecraftServer,status: StatusFormat){
         get{
@@ -81,6 +90,10 @@ class DataManager{
     
     func updateStatus(){
         statusList = checker.getAllStatus(serverdata.serverArray)
+    }
+    
+    func updateCurrentStatus(){
+        statusList = checker.updateStatus(serverdata.serverArray, statusList: statusList, index: self.currentIndex!)
     }
     
     func add(server: MinecraftServer){

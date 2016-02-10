@@ -12,4 +12,10 @@ class ServerTableCell: UITableViewCell {
     @IBOutlet var name: UITextField?
     @IBOutlet var online: UITextField?
     @IBOutlet var icon: UITextField?
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        super.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        // Initialization code
+    }
+
 }

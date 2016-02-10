@@ -15,6 +15,7 @@ class PropatyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        super.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         // Initialization code
     }
 
