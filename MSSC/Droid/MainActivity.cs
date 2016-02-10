@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -69,6 +70,11 @@ namespace MSSC.Droid
                 linearLayout1.AddView(_gridLayouts[i]);
             }
 
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
         }
 
         private void plusButton_Click(object sender, EventArgs e)

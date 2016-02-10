@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Xml.Serialization;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -26,6 +26,7 @@ namespace MSSC.Droid
         private ServerDataList()
         {
             //TODO :デシリアライズ処理に書き換える
+
             ServerDatas = new List<ServerData>
             {
                 new ServerData("來知サーバ", "ArLEWorks.sytes.net", "25565"),
