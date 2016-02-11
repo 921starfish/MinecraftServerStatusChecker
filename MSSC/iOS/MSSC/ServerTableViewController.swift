@@ -11,11 +11,8 @@ import UIKit
 class ServerTableViewController: UITableViewController{
     
     override func viewDidLoad() {
+        DataManager.instance.updateStatus()
         super.viewDidLoad()
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl!.attributedTitle = NSAttributedString(string: "引っ張って更新")
-        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshControl!)
     }
     func refresh()
     {
@@ -25,8 +22,14 @@ class ServerTableViewController: UITableViewController{
         refreshControl!.endRefreshing()
     }
     override func viewDidAppear(animated: Bool) {
-        DataManager.instance.updateStatus()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "引っ張って更新")
+        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
+
         self.tableView.reloadData()
+        super.viewDidAppear(animated)
+        
     }
     
     override func didReceiveMemoryWarning() {

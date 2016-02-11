@@ -64,12 +64,14 @@
                                             <fontDescription key="fontDescription" name="MineCrafter-3" family="MineCrafter 3" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="1454998357_icon-wifi" disabledBackground="exclamation3" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-8p-cBw">
-                                            <rect key="frame" x="577" y="14" width="15" height="15.5"/>
+                                        <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="1454998357_icon-wifi" disabledBackground="exclamation3" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-8p-cBw">
+                                            <rect key="frame" x="571" y="13" width="15" height="15.5"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <bool key="isElement" value="NO"/>
                                             </accessibility>
                                             <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15.5" id="0ae-8i-tno"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="V6A-Qf-cSh"/>
                                                 <constraint firstAttribute="height" constant="15" id="gec-ak-qsp"/>
                                                 <constraint firstAttribute="width" constant="15" id="q6c-zr-F75"/>
                                             </constraints>
@@ -80,10 +82,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="DAr-It-VNc" firstAttribute="leading" secondItem="bO5-GV-FGD" secondAttribute="leadingMargin" constant="15" id="8G1-BS-FcN"/>
-                                        <constraint firstItem="ewo-8p-cBw" firstAttribute="trailing" secondItem="bO5-GV-FGD" secondAttribute="trailingMargin" id="J8a-4U-k8r"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ewo-8p-cBw" secondAttribute="bottom" id="N9T-wq-K4T"/>
                                         <constraint firstItem="GlM-gf-toz" firstAttribute="leading" secondItem="DAr-It-VNc" secondAttribute="trailing" constant="25" id="O5P-vT-7Is"/>
-                                        <constraint firstItem="ewo-8p-cBw" firstAttribute="leading" secondItem="GlM-gf-toz" secondAttribute="trailing" id="pNs-uq-7kb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ewo-8p-cBw" secondAttribute="trailing" constant="6" id="O7q-B5-XWQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
